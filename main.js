@@ -27,8 +27,8 @@ GAMES.forEach((game, index) => {
             <span class="play-badge"><i class="fa-solid fa-play"></i></span>
         </span>
         <span class="game-info">
-            <span class="game-name">${game.name}</span>
             <span class="game-topic">${game.topic}</span>
+            <span class="game-name">${game.name}</span>
         </span>`
     tile.addEventListener('click', () => openGame(game))
     grid.appendChild(tile)
@@ -74,56 +74,3 @@ dialog.addEventListener('click', (event) => {
 document.getElementById('play-random').addEventListener('click', () => openGame(randomGame()))
 document.getElementById('game-shuffle').addEventListener('click', () => openGame(randomGame()))
 document.getElementById('game-close').addEventListener('click', closeGame)
-
-// glowing embers drifting up from the bottom of the screen
-const canvas = document.getElementById('embers')
-const ctx = canvas.getContext('2d')
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-const COLORS = ['#ffb347', '#ff7b39', '#e2643a', '#f6d27a']
-let embers = []
-
-function makeEmber(startAnywhere) {
-    return {
-        x: Math.random() * window.innerWidth,
-        y: startAnywhere ? Math.random() * window.innerHeight : window.innerHeight + 10,
-        size: 0.8 + Math.random() * 2.2,
-        speed: 0.2 + Math.random() * 0.6,
-        drift: Math.random() * Math.PI * 2,
-        color: COLORS[Math.floor(Math.random() * COLORS.length)],
-    }
-}
-
-function resizeEmbers() {
-    const ratio = window.devicePixelRatio || 1
-    canvas.width = window.innerWidth * ratio
-    canvas.height = window.innerHeight * ratio
-    ctx.setTransform(ratio, 0, 0, ratio, 0, 0)
-    const count = Math.round((window.innerWidth * window.innerHeight) / 22000)
-    embers = Array.from({ length: count }, () => makeEmber(true))
-}
-
-function drawEmbers(time) {
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
-    for (let i = 0; i < embers.length; i++) {
-        const ember = embers[i]
-        if (!reduceMotion) {
-            ember.y -= ember.speed
-            ember.x += Math.sin(time / 1400 + ember.drift) * 0.3
-            if (ember.y < -10) embers[i] = makeEmber(false)
-        }
-        // fade out as embers rise, with a little flicker
-        const height = Math.max(0, ember.y / window.innerHeight)
-        ctx.globalAlpha = Math.min(1, height + 0.15) * (0.55 + 0.45 * Math.sin(time / 180 + ember.drift))
-        ctx.shadowBlur = 8
-        ctx.shadowColor = ember.color
-        ctx.fillStyle = ember.color
-        ctx.beginPath()
-        ctx.arc(ember.x, ember.y, ember.size, 0, Math.PI * 2)
-        ctx.fill()
-    }
-    if (!reduceMotion) requestAnimationFrame(drawEmbers)
-}
-
-resizeEmbers()
-window.addEventListener('resize', resizeEmbers)
-requestAnimationFrame(drawEmbers)

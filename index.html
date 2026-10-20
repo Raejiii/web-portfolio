@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@600;700&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Roboto+Condensed:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -19,14 +19,13 @@
 </head>
 
 <body>
-    <canvas id="embers" aria-hidden="true"></canvas>
-
     <header class="site-header">
-        <a class="logo" href="#top">Rae</a>
+        <a class="logo" href="#top"><span class="logo-mark">R</span>Rahul JS <em>(Rae)</em></a>
         <nav>
             <a href="#projects">Projects</a>
             <a href="#games">Games</a>
             <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
             <a class="icon-link" target="_blank" href="https://github.com/Raejiii" aria-label="GitHub"><i
                     class="fa-brands fa-github"></i></a>
             <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/rahul-joy-suneel-1b90ba300/"
@@ -34,226 +33,245 @@
         </nav>
     </header>
 
-    <main id="top">
-        <!-- HERO -->
-        <section class="hero">
-            <p class="eyebrow">✦ A developer of Bangalore ✦</p>
-            <h1>Hail, traveller.<br />I'm <span class="gold-text">Rae</span>, forger of <br class="hide-sm" />web apps
-                &amp; <span class="ember-text">games</span>.</h1>
-            <p class="hero-sub">
-                Master's student and full stack &amp; game developer. I've built 100+ educational web games at
-                Eklavya.Me with Phaser, React &amp; TypeScript, and full stack apps with Next.js, Stripe and
-                Firebase.
-            </p>
+    <!-- HERO: sourcebook cover banner -->
+    <section class="hero" id="top">
+        <div class="hero-art" aria-hidden="true">
+            <img src="images/games/hungry-monsters.webp" alt="" />
+            <img src="images/games/penguin-count.webp" alt="" />
+            <img src="images/games/bridge-the-sum.webp" alt="" />
+            <img src="images/games/number-climb.webp" alt="" />
+            <img src="images/games/sky-balloon-quest.webp" alt="" />
+            <img src="images/games/math-munch.webp" alt="" />
+        </div>
+        <div class="hero-inner">
+            <p class="overline">Portfolio · Bangalore, India</p>
+            <h1>Hi, I'm Rae.<br />I build web apps &amp; games people play.</h1>
+            <div class="rule" aria-hidden="true"></div>
+            <p class="hero-sub">Full stack &amp; game developer</p>
             <div class="hero-actions">
-                <button class="btn btn-play" id="play-random">
-                    <i class="fa-solid fa-dice-d20"></i> Roll for a game
-                </button>
-                <a class="btn btn-ghost" href="#projects">Read the chronicle <i class="fa-solid fa-scroll"></i></a>
+                <button class="btn btn-primary" id="play-random"><i class="fa-solid fa-play"></i> Play a
+                    game</button>
+                <a class="btn btn-outline" href="#projects">See my work</a>
             </div>
-            <ul class="stats">
-                <li><strong>100+</strong><span>games built</span></li>
-                <li><strong>3</strong><span>full stack apps</span></li>
-                <li><strong>2</strong><span>guilds joined</span></li>
-            </ul>
+        </div>
+    </section>
+
+    <main class="book">
+        <!-- INTRO -->
+        <section class="intro">
+            <p class="dropcap">I'm a master's student and full stack &amp; game developer. I've built 100+ educational
+                web games at Eklavya.Me with Phaser, React &amp; TypeScript, and full stack apps with Next.js, Stripe
+                and Firebase. I love making things that are fun to use, whether that's a store, a dashboard or a game
+                for a seven-year-old learning to count.</p>
+            <dl class="stat-strip">
+                <div>
+                    <dt>Games built</dt>
+                    <dd>100+</dd>
+                </div>
+                <div>
+                    <dt>Full stack apps</dt>
+                    <dd>3</dd>
+                </div>
+                <div>
+                    <dt>Dev roles</dt>
+                    <dd>2</dd>
+                </div>
+                <div>
+                    <dt>Based in</dt>
+                    <dd>Bangalore</dd>
+                </div>
+            </dl>
         </section>
 
-        <!-- CHAPTER I: SMOLSTORE -->
-        <section id="projects" class="section">
-            <div class="section-head">
-                <p class="eyebrow">Chapter I</p>
-                <h2>The featured quest</h2>
-            </div>
-            <article class="feature-card framed">
+        <!-- CHAPTER 1: FEATURED -->
+        <section id="projects" class="chapter">
+            <header class="chapter-head">
+                <p class="chapter-no">Chapter 1</p>
+                <h2>Featured project</h2>
+            </header>
+
+            <article class="stat-block feature">
                 <a class="feature-media" href="https://smolstore.vercel.app" target="_blank">
                     <img src="images/smolstore.webp" alt="Smolstore e-commerce store home page" loading="lazy" />
                 </a>
-                <div class="feature-body">
-                    <p class="kicker">Full stack e-commerce</p>
+                <div class="stat-body">
                     <h3>Smolstore</h3>
-                    <p>A store for programmers and productivity fiends. Products and prices come straight from the
+                    <p class="stat-type">Full stack e-commerce store</p>
+                    <div class="taper" aria-hidden="true"></div>
+                    <p class="stat-line"><strong>Stack</strong> Next.js 15, React, Stripe API, Context API</p>
+                    <p class="stat-line"><strong>Hosting</strong> Vercel</p>
+                    <div class="taper" aria-hidden="true"></div>
+                    <p>A store for programmers and productivity fans. Products and prices come straight from the
                         Stripe API, carts live in React Context, and checkout runs through secure Stripe Checkout
                         sessions from Next.js API routes.</p>
-                    <ul class="tags">
-                        <li>Next.js 15</li>
-                        <li>React</li>
-                        <li>Stripe API</li>
-                        <li>Context API</li>
-                        <li>Vercel</li>
-                    </ul>
-                    <div class="card-links">
-                        <a class="btn btn-small" target="_blank" href="https://smolstore.vercel.app">Live demo <i
-                                class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        <a class="btn btn-small btn-ghost" target="_blank"
+                    <h4 class="actions-head">Links</h4>
+                    <div class="links">
+                        <a class="btn btn-primary btn-small" target="_blank" href="https://smolstore.vercel.app">Live
+                            demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a class="btn btn-outline btn-small" target="_blank"
                             href="https://github.com/Raejiii/smolstore"><i class="fa-brands fa-github"></i> Code</a>
                     </div>
                 </div>
             </article>
         </section>
 
-        <!-- CHAPTER II: MORE PROJECTS -->
-        <section class="section">
-            <div class="section-head">
-                <p class="eyebrow">Chapter II</p>
-                <h2>Side quests</h2>
-            </div>
-            <div class="cards">
-                <article class="card framed">
+        <!-- CHAPTER 2: MORE PROJECTS -->
+        <section class="chapter">
+            <header class="chapter-head">
+                <p class="chapter-no">Chapter 2</p>
+                <h2>More projects</h2>
+            </header>
+            <div class="two-col">
+                <article class="stat-block">
+                    <a class="card-media" href="https://wheel-of-suffering.vercel.app" target="_blank">
+                        <img src="images/wheel-of-suffering.webp" alt="Wheel of Suffering workout app" loading="lazy" />
+                    </a>
+                    <div class="stat-body">
+                        <h3>Wheel of Suffering</h3>
+                        <p class="stat-type">Home workout app</p>
+                        <div class="taper" aria-hidden="true"></div>
+                        <p class="stat-line"><strong>Stack</strong> React, Hooks, Vite, Web Audio, localStorage</p>
+                        <div class="taper" aria-hidden="true"></div>
+                        <p>My own home workout tool for a pull-up bar and dumbbells. Customise a wheel of exercises,
+                            spin it for a random workout, and let the built-in interval timer call a new set every few
+                            minutes.</p>
+                        <div class="links">
+                            <a class="btn btn-primary btn-small" target="_blank"
+                                href="https://wheel-of-suffering.vercel.app">Live demo <i
+                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a class="btn btn-outline btn-small" target="_blank"
+                                href="https://github.com/Raejiii/wheel-of-suffering"><i class="fa-brands fa-github"></i>
+                                Code</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="stat-block">
                     <a class="card-media" href="https://expenny-blond.vercel.app" target="_blank">
                         <img src="images/expenny.webp" alt="Expenny subscription tracker landing page"
                             loading="lazy" />
                     </a>
-                    <div class="card-body">
-                        <p class="kicker">SaaS dashboard</p>
+                    <div class="stat-body">
                         <h3>Expenny</h3>
+                        <p class="stat-type">SaaS subscription tracker</p>
+                        <div class="taper" aria-hidden="true"></div>
+                        <p class="stat-line"><strong>Stack</strong> Next.js, Firebase Auth, Cloud Firestore</p>
+                        <div class="taper" aria-hidden="true"></div>
                         <p>Subscription tracker with email/password auth, Firestore storage and spending analytics,
                             secured per user with Firestore Security Rules.</p>
-                        <ul class="tags">
-                            <li>Next.js</li>
-                            <li>Firebase Auth</li>
-                            <li>Firestore</li>
-                        </ul>
-                        <div class="card-links">
-                            <a target="_blank" href="https://expenny-blond.vercel.app">Live <i
+                        <div class="links">
+                            <a class="btn btn-primary btn-small" target="_blank"
+                                href="https://expenny-blond.vercel.app">Live demo <i
                                     class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            <a target="_blank" href="https://github.com/Raejiii/expenny"><i
-                                    class="fa-brands fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="card framed">
-                    <a class="card-media" href="https://brogram-taupe.vercel.app" target="_blank">
-                        <img src="images/brogram.webp" alt="Brogram workout planner" loading="lazy" />
-                    </a>
-                    <div class="card-body">
-                        <p class="kicker">React SPA</p>
-                        <h3>Brogram</h3>
-                        <p>Workout planner for a 30-workout training program, with progress tracking, reusable
-                            components and localStorage persistence.</p>
-                        <ul class="tags">
-                            <li>React</li>
-                            <li>Hooks</li>
-                            <li>Vite</li>
-                        </ul>
-                        <div class="card-links">
-                            <a target="_blank" href="https://brogram-taupe.vercel.app">Live <i
-                                    class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            <a target="_blank" href="https://github.com/Raejiii/brogram"><i
-                                    class="fa-brands fa-github"></i> Code</a>
+                            <a class="btn btn-outline btn-small" target="_blank"
+                                href="https://github.com/Raejiii/expenny"><i class="fa-brands fa-github"></i> Code</a>
                         </div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- CHAPTER III: EKLAVYA GAMES -->
-        <section id="games" class="section">
-            <div class="section-head">
-                <p class="eyebrow">Chapter III</p>
-                <h2>The Eklavya.Me games</h2>
-                <p class="section-sub">I've built 100+ educational web games for young learners at Eklavya.Me, from
-                    counting penguins to prime-number munching, with Phaser, React, TypeScript and Vite, tested with
-                    Vitest and shipped through GitHub Actions. Here are 10 of them. <strong>Choose one to play it
-                        right here.</strong></p>
-            </div>
+        <!-- CHAPTER 3: EKLAVYA GAMES -->
+        <section id="games" class="chapter">
+            <header class="chapter-head">
+                <p class="chapter-no">Chapter 3</p>
+                <h2>Eklavya.Me games</h2>
+            </header>
+            <p class="lede">I've built 100+ educational web games for young learners at Eklavya.Me, from counting
+                penguins to prime-number munching. Here are 10 of them. Click any game to play it right here.</p>
+            <aside class="sidebar">
+                <h4>How they're built</h4>
+                <p>Phaser, React, TypeScript and Vite, each plugged into a shared game shell, tested with Vitest and
+                    shipped through a GitHub Actions pipeline.</p>
+            </aside>
             <div class="games-grid" id="games-grid"></div>
         </section>
 
-        <!-- EXPERIENCE -->
-        <section id="experience" class="section">
-            <div class="section-head">
-                <p class="eyebrow">Chapter IV</p>
-                <h2>Campaign log</h2>
-            </div>
-            <ol class="timeline">
-                <li>
-                    <span class="when">Aug 2026 – Present</span>
-                    <h3>Frontend Developer Intern <span>of Thundertribes</span></h3>
+        <!-- CHAPTER 4: EXPERIENCE -->
+        <section id="experience" class="chapter">
+            <header class="chapter-head">
+                <p class="chapter-no">Chapter 4</p>
+                <h2>Experience</h2>
+            </header>
+            <div class="entries">
+                <article class="entry">
+                    <h3>Frontend Developer Intern</h3>
+                    <p class="entry-meta">Thundertribes · Remote · Aug 2026 – Present</p>
                     <p>Building and maintaining responsive front-end interfaces for web applications in a remote
                         team.</p>
-                </li>
-                <li>
-                    <span class="when">Dec 2024 – Present</span>
-                    <h3>Front-end Web &amp; Game Developer <span>of Eklavya.Me</span></h3>
-                    <p>Built 100+ educational web games with Phaser, React and TypeScript, plugged into a shared
-                        game shell. Led a party of game development interns.</p>
-                </li>
-            </ol>
+                </article>
+                <article class="entry">
+                    <h3>Front-end Web &amp; Game Developer</h3>
+                    <p class="entry-meta">Eklavya.Me · Remote · Dec 2024 – Present</p>
+                    <p>Built 100+ educational web games with Phaser, React and TypeScript, plugged into a shared game
+                        shell. Led a team of game development interns.</p>
+                </article>
+            </div>
         </section>
 
-        <!-- SKILLS -->
-        <section class="section">
-            <div class="section-head">
-                <p class="eyebrow">Chapter V</p>
-                <h2>Spellbook</h2>
-            </div>
-            <div class="skills">
-                <div class="skill-group framed">
-                    <h3><i class="fa-solid fa-wand-sparkles"></i> Front-end arts</h3>
-                    <ul class="tags">
-                        <li>JavaScript</li>
-                        <li>TypeScript</li>
-                        <li>React</li>
-                        <li>Next.js</li>
-                        <li>Redux Toolkit</li>
-                        <li>Tailwind CSS</li>
-                        <li>HTML &amp; CSS</li>
-                    </ul>
-                </div>
-                <div class="skill-group framed">
-                    <h3><i class="fa-solid fa-dragon"></i> Game craft</h3>
-                    <ul class="tags">
-                        <li>Phaser</li>
-                        <li>HTML5 Canvas</li>
-                        <li>Game design</li>
-                        <li>Vitest</li>
-                    </ul>
-                </div>
-                <div class="skill-group framed">
-                    <h3><i class="fa-solid fa-hammer"></i> Back-end forge</h3>
-                    <ul class="tags">
-                        <li>Firebase</li>
-                        <li>Firestore</li>
-                        <li>Stripe</li>
-                        <li>FastAPI</li>
-                        <li>Git</li>
-                        <li>GitHub Actions</li>
-                        <li>Vercel</li>
-                    </ul>
-                </div>
-            </div>
+        <!-- CHAPTER 5: SKILLS -->
+        <section id="skills" class="chapter">
+            <header class="chapter-head">
+                <p class="chapter-no">Chapter 5</p>
+                <h2>Skills</h2>
+            </header>
+            <table class="book-table">
+                <caption>Skills by area</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Area</th>
+                        <th scope="col">Technologies</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Front-end</th>
+                        <td>JavaScript, TypeScript, React, Next.js, Redux Toolkit, Tailwind CSS, HTML &amp; CSS</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Games</th>
+                        <td>Phaser, HTML5 Canvas, game design, Vitest</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Back-end</th>
+                        <td>Firebase Auth, Cloud Firestore, Stripe, FastAPI, REST APIs</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tools</th>
+                        <td>Git, GitHub Actions, Vercel, ESLint</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <!-- CONTACT -->
-        <section class="contact framed">
-            <p class="eyebrow">✦ Join my party ✦</p>
-            <h2>Seeking a full stack role.</h2>
-            <p>I'm looking for full stack developer roles. Send a raven, or an email, which is faster.</p>
+        <section class="contact">
+            <h2>Looking for full stack roles</h2>
+            <div class="rule" aria-hidden="true"></div>
+            <p>I'm looking for full stack developer roles. My inbox is always open.</p>
             <div class="hero-actions">
-                <a class="btn btn-play" href="mailto:rahuljsuneel@gmail.com"><i class="fa-solid fa-feather"></i>
+                <a class="btn btn-primary" href="mailto:rahuljsuneel@gmail.com"><i class="fa-solid fa-envelope"></i>
                     Email me</a>
-                <a class="btn btn-ghost" target="_blank"
+                <a class="btn btn-outline" target="_blank"
                     href="https://www.linkedin.com/in/rahul-joy-suneel-1b90ba300/"><i
                         class="fa-brands fa-linkedin"></i> LinkedIn</a>
-                <a class="btn btn-ghost" target="_blank" href="https://github.com/Raejiii"><i
+                <a class="btn btn-outline" target="_blank" href="https://github.com/Raejiii"><i
                         class="fa-brands fa-github"></i> GitHub</a>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <p>© 2026 Rahul JS (Rae) · Forged with HTML, CSS &amp; JavaScript</p>
+        <p>© 2026 Rahul JS (Rae) · Built with HTML, CSS &amp; JavaScript</p>
     </footer>
 
     <!-- GAME MODAL -->
     <dialog id="game-dialog" class="game-dialog" aria-labelledby="game-title">
         <div class="cabinet">
             <div class="cabinet-bar">
-                <i class="fa-solid fa-dice-d20 bar-icon"></i>
                 <h2 id="game-title">Loading...</h2>
                 <div class="cabinet-actions">
-                    <button id="game-shuffle" title="Roll for another game"><i class="fa-solid fa-dice"></i>
-                        <span>Reroll</span></button>
+                    <button id="game-shuffle" title="Play another random game"><i class="fa-solid fa-shuffle"></i>
+                        <span>Another</span></button>
                     <a id="game-newtab" target="_blank" title="Open in a new tab"><i
                             class="fa-solid fa-up-right-from-square"></i></a>
                     <button id="game-close" title="Close (Esc)" aria-label="Close game"><i
@@ -263,7 +281,7 @@
             <div class="screen">
                 <div class="loader" aria-hidden="true">
                     <i class="fa-solid fa-dice-d20 loader-die"></i>
-                    <p>Rolling the dice...</p>
+                    <p>Loading game...</p>
                 </div>
                 <iframe id="game-frame" title="Eklavya game" allow="autoplay; fullscreen"></iframe>
             </div>
