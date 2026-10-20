@@ -74,3 +74,89 @@ dialog.addEventListener('click', (event) => {
 document.getElementById('play-random').addEventListener('click', () => openGame(randomGame()))
 document.getElementById('game-shuffle').addEventListener('click', () => openGame(randomGame()))
 document.getElementById('game-close').addEventListener('click', closeGame)
+
+// ---------- rollable d20 ----------
+const dice = document.getElementById('dice')
+const diceNumber = document.getElementById('dice-number')
+const diceResult = document.getElementById('dice-result')
+let audioContext = null
+let rolling = false
+let hideResult = null
+
+// a short wooden clack, made with Web Audio so no sound files are needed
+function clack(volume = 0.2) {
+    try {
+        audioContext = audioContext || new (window.AudioContext || window.webkitAudioContext)()
+        const length = 0.05
+        const buffer = audioContext.createBuffer(1, audioContext.sampleRate * length, audioContext.sampleRate)
+        const data = buffer.getChannelData(0)
+        for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / data.length, 4)
+        const source = audioContext.createBufferSource()
+        const filter = audioContext.createBiquadFilter()
+        const gain = audioContext.createGain()
+        filter.type = 'bandpass'
+        filter.frequency.value = 900 + Math.random() * 900
+        gain.gain.value = volume
+        source.buffer = buffer
+        source.connect(filter).connect(gain).connect(audioContext.destination)
+        source.start()
+    } catch {
+        // audio is optional
+    }
+}
+
+function rollMessage(value) {
+    if (value === 20) return 'Natural 20! Critical success.'
+    if (value === 1) return 'Natural 1. Critical fail.'
+    if (value >= 15) return `You rolled ${value}. Nice roll!`
+    if (value >= 8) return `You rolled ${value}.`
+    return `You rolled ${value}. Ouch.`
+}
+
+function rollDice() {
+    if (rolling) return
+    rolling = true
+    const value = Math.floor(Math.random() * 20) + 1
+    clearTimeout(hideResult)
+    diceResult.classList.remove('show', 'crit', 'fail')
+    dice.classList.remove('crit', 'fail')
+    dice.classList.add('rolling')
+
+    // flick through random faces while it tumbles, slowing down at the end
+    const steps = 12
+    for (let step = 0; step < steps; step++) {
+        setTimeout(() => {
+            diceNumber.textContent = Math.floor(Math.random() * 20) + 1
+            if (step % 3 === 0) clack(0.12)
+        }, Math.pow(step / steps, 1.6) * 1000)
+    }
+
+    setTimeout(() => {
+        diceNumber.textContent = value
+        dice.classList.remove('rolling')
+        clack(0.3)
+        if (value === 20) dice.classList.add('crit')
+        if (value === 1) dice.classList.add('fail')
+        diceResult.textContent = rollMessage(value)
+        diceResult.classList.add('show')
+        if (value === 20) diceResult.classList.add('crit')
+        if (value === 1) diceResult.classList.add('fail')
+        rolling = false
+        hideResult = setTimeout(() => diceResult.classList.remove('show'), 4000)
+    }, 1100)
+}
+
+dice.addEventListener('click', rollDice)
+
+// ---------- fade sections in as they scroll into view ----------
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return
+            entry.target.classList.add('visible')
+            revealObserver.unobserve(entry.target)
+        })
+    },
+    { threshold: 0.12 },
+)
+document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element))

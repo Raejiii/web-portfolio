@@ -58,7 +58,7 @@
 
     <main class="book">
         <!-- INTRO -->
-        <section class="intro">
+        <section class="intro reveal">
             <p class="dropcap">I'm a master's student and full stack &amp; game developer. I've built 100+ educational
                 web games at Eklavya.Me with Phaser, React &amp; TypeScript, and full stack apps with Next.js, Stripe
                 and Firebase. I love making things that are fun to use, whether that's a store, a dashboard or a game
@@ -84,7 +84,7 @@
         </section>
 
         <!-- CHAPTER 1: FEATURED -->
-        <section id="projects" class="chapter">
+        <section id="projects" class="chapter reveal">
             <header class="chapter-head">
                 <p class="chapter-no">Chapter 1</p>
                 <h2>Featured project</h2>
@@ -116,7 +116,7 @@
         </section>
 
         <!-- CHAPTER 2: MORE PROJECTS -->
-        <section class="chapter">
+        <section class="chapter reveal">
             <header class="chapter-head">
                 <p class="chapter-no">Chapter 2</p>
                 <h2>More projects</h2>
@@ -171,7 +171,7 @@
         </section>
 
         <!-- CHAPTER 3: EKLAVYA GAMES -->
-        <section id="games" class="chapter">
+        <section id="games" class="chapter reveal">
             <header class="chapter-head">
                 <p class="chapter-no">Chapter 3</p>
                 <h2>Eklavya.Me games</h2>
@@ -187,7 +187,7 @@
         </section>
 
         <!-- CHAPTER 4: EXPERIENCE -->
-        <section id="experience" class="chapter">
+        <section id="experience" class="chapter reveal">
             <header class="chapter-head">
                 <p class="chapter-no">Chapter 4</p>
                 <h2>Experience</h2>
@@ -209,7 +209,7 @@
         </section>
 
         <!-- CHAPTER 5: SKILLS -->
-        <section id="skills" class="chapter">
+        <section id="skills" class="chapter reveal">
             <header class="chapter-head">
                 <p class="chapter-no">Chapter 5</p>
                 <h2>Skills</h2>
@@ -244,7 +244,7 @@
         </section>
 
         <!-- CONTACT -->
-        <section class="contact">
+        <section class="contact reveal">
             <h2>Looking for full stack roles</h2>
             <div class="rule" aria-hidden="true"></div>
             <p>I'm looking for full stack developer roles. My inbox is always open.</p>
@@ -287,6 +287,22 @@
             </div>
         </div>
     </dialog>
+
+    <!-- ROLLABLE D20 -->
+    <div class="dice-tray">
+        <p class="dice-result" id="dice-result" role="status" aria-live="polite"></p>
+        <button class="dice" id="dice" aria-label="Roll a d20" title="Roll a d20">
+            <svg class="d20" viewBox="0 0 100 100" aria-hidden="true">
+                <polygon class="d20-face" points="50,3 91,26.5 91,73.5 50,97 9,73.5 9,26.5" />
+                <polygon class="d20-front" points="50,22 75,64 25,64" />
+                <polyline class="d20-edge" points="50,3 50,22 9,26.5 25,64 9,73.5" />
+                <polyline class="d20-edge" points="50,22 91,26.5 75,64 91,73.5" />
+                <polyline class="d20-edge" points="25,64 50,97 75,64" />
+                <text class="d20-number" id="dice-number" x="50" y="50" text-anchor="middle"
+                    dominant-baseline="middle">20</text>
+            </svg>
+        </button>
+    </div>
 
     <script src="main.js"></script>
 </body>
