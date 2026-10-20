@@ -2,7 +2,7 @@
 
 My personal portfolio site, with a small JavaScript color-picker game, showcasing the projects I've built.
 
-**Tech stack:** HTML, CSS, JavaScript, FantaCSS
+**Tech stack:** HTML, CSS, JavaScript (no framework)
 
 ## Getting started
 
