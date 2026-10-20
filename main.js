@@ -2,19 +2,8 @@
 const GAME_BASE = 'https://content.dev.eklavya.me/devek.designer/'
 const GAMES = [
     { slug: 'penguin-count', name: 'Penguin Count', topic: 'Counting' },
-    { slug: 'number-express', name: 'Number Express', topic: 'Addition' },
     { slug: 'sky-balloon-quest', name: 'Sky Balloon Quest', topic: 'Addition' },
-    { slug: 'bridge-the-sum', name: 'Bridge the Sum', topic: 'Sums' },
     { slug: 'number-climb', name: 'Number Climb', topic: 'Comparing numbers' },
-    { slug: 'hungry-monsters', name: 'Hungry Monsters', topic: 'Multiplication' },
-    { slug: 'division-derby', name: 'Division Derby', topic: 'Division' },
-    { slug: 'math-munch', name: 'Math Munch', topic: 'Prime numbers' },
-    {
-        slug: 'tracing-game',
-        name: 'Tracing Game',
-        topic: 'Letter tracing',
-        url: 'https://content.dev.eklavya.me/devek.designer/tracing-character-game-preview/index.html',
-    },
 ]
 
 const gameUrl = (game) => game.url || `${GAME_BASE}${game.slug}-phaser/index.html`
