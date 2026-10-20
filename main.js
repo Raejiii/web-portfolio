@@ -44,6 +44,7 @@ let currentGame = null
 function openGame(game) {
     currentGame = game
     title.textContent = game.name
+    frame.classList.remove('loaded')
     frame.src = gameUrl(game)
     newTab.href = gameUrl(game)
     if (!dialog.open) dialog.showModal()
@@ -62,6 +63,9 @@ dialog.addEventListener('close', () => {
     // unload the game so its audio stops
     frame.src = 'about:blank'
     currentGame = null
+})
+frame.addEventListener('load', () => {
+    if (frame.src !== 'about:blank') frame.classList.add('loaded')
 })
 dialog.addEventListener('click', (event) => {
     if (event.target === dialog) closeGame()
