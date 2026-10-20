@@ -44,6 +44,7 @@ let currentGame = null
 function openGame(game) {
     currentGame = game
     title.textContent = game.name
+    frame.title = `${game.name}, an Eklavya.Me game`
     frame.classList.remove('loaded')
     frame.src = gameUrl(game)
     newTab.href = gameUrl(game)

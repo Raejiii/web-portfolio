@@ -4,12 +4,12 @@
     --paper-light: #f3e6c8;
     --ink: #2b1b0e;
     --ink-soft: #4e3a26;
-    --muted: #6e5638;
+    --muted: #523c22;
     --red: #e40712;
     --red-book: #8b1a0f;
     --red-deep: #58180d;
     --gold: #c9892b;
-    --bronze: #8a5a22;
+    --bronze: #5f3b12;
     /* Player's Handbook stat block and note colours */
     --block: #f6e8c9;
     --block-border: #d59a3c;
@@ -60,7 +60,7 @@ body::before {
     z-index: 30;
     pointer-events: none;
     background:
-        radial-gradient(ellipse at center, transparent 58%, rgba(110, 66, 22, 0.28) 85%, rgba(70, 38, 12, 0.5) 100%);
+        radial-gradient(ellipse at center, transparent 60%, rgba(110, 66, 22, 0.22) 85%, rgba(70, 38, 12, 0.4) 100%);
 }
 
 a {
@@ -148,6 +148,20 @@ img {
     font-size: 1.15rem !important;
 }
 
+.site-header nav a.nav-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.85rem;
+    border: 1px solid var(--red);
+    border-radius: 3px;
+    color: #fff;
+}
+
+.site-header nav a.nav-resume:hover {
+    background: var(--red);
+}
+
 /* ---------- hero banner ---------- */
 .hero {
     position: relative;
@@ -221,7 +235,7 @@ img {
     font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--red);
+    color: #ff4d4d;
 }
 
 .hero h1 {
@@ -680,6 +694,14 @@ img {
     margin: 0.2rem 0 0.4rem;
 }
 
+.sub-head {
+    margin: 2.75rem 0 1.25rem;
+    font-family: var(--heading);
+    font-size: 1.9rem;
+    color: var(--red-deep);
+    border-bottom: 1px solid var(--gold);
+}
+
 /* ---------- table ---------- */
 .book-table {
     width: 100%;
@@ -739,6 +761,26 @@ img {
 .contact p {
     max-width: 640px;
     font-size: 1.25rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 0.9rem;
+}
+
+.footer-links a {
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+}
+
+.footer-links a:hover {
+    color: var(--red-book);
 }
 
 .site-footer {
@@ -1079,7 +1121,7 @@ img {
         font-size: 1.1rem;
     }
 
-    .site-header nav a:not(.icon-link) {
+    .site-header nav a:not(.icon-link):not(.nav-resume) {
         display: none;
     }
 
@@ -1106,8 +1148,16 @@ img {
     }
 
     .dice {
-        width: 62px;
-        height: 62px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .site-footer {
+        padding-bottom: 6rem;
+    }
+
+    .site-header nav a.nav-resume {
+        padding: 0.35rem 0.6rem;
     }
 
     .dice-result {
