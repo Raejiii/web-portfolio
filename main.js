@@ -8,7 +8,6 @@ const GAMES = [
     { slug: 'number-climb', name: 'Number Climb', topic: 'Comparing numbers' },
     { slug: 'hungry-monsters', name: 'Hungry Monsters', topic: 'Multiplication' },
     { slug: 'division-derby', name: 'Division Derby', topic: 'Division' },
-    { slug: 'hungry-puppy-decimals', name: 'Hungry Puppy Decimals', topic: 'Decimals' },
     { slug: 'math-munch', name: 'Math Munch', topic: 'Prime numbers' },
     { slug: 'tracing-game', name: 'Tracing Game', topic: 'Letter tracing' },
 ]
