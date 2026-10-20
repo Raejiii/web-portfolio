@@ -75,43 +75,55 @@ document.getElementById('play-random').addEventListener('click', () => openGame(
 document.getElementById('game-shuffle').addEventListener('click', () => openGame(randomGame()))
 document.getElementById('game-close').addEventListener('click', closeGame)
 
-// twinkling starfield background
-const canvas = document.getElementById('stars')
+// glowing embers drifting up from the bottom of the screen
+const canvas = document.getElementById('embers')
 const ctx = canvas.getContext('2d')
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-const COLORS = ['#ffffff', '#3be8ff', '#ff4fa3', '#ffd23b']
-let stars = []
+const COLORS = ['#ffb347', '#ff7b39', '#e2643a', '#f6d27a']
+let embers = []
 
-function resizeStars() {
+function makeEmber(startAnywhere) {
+    return {
+        x: Math.random() * window.innerWidth,
+        y: startAnywhere ? Math.random() * window.innerHeight : window.innerHeight + 10,
+        size: 0.8 + Math.random() * 2.2,
+        speed: 0.2 + Math.random() * 0.6,
+        drift: Math.random() * Math.PI * 2,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    }
+}
+
+function resizeEmbers() {
     const ratio = window.devicePixelRatio || 1
     canvas.width = window.innerWidth * ratio
     canvas.height = window.innerHeight * ratio
     ctx.setTransform(ratio, 0, 0, ratio, 0, 0)
-    const count = Math.round((window.innerWidth * window.innerHeight) / 9000)
-    stars = Array.from({ length: count }, () => ({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        size: Math.random() < 0.85 ? 1 : 2,
-        speed: 0.05 + Math.random() * 0.25,
-        phase: Math.random() * Math.PI * 2,
-        color: COLORS[Math.floor(Math.random() * COLORS.length)],
-    }))
+    const count = Math.round((window.innerWidth * window.innerHeight) / 22000)
+    embers = Array.from({ length: count }, () => makeEmber(true))
 }
 
-function drawStars(time) {
+function drawEmbers(time) {
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
-    for (const star of stars) {
+    for (let i = 0; i < embers.length; i++) {
+        const ember = embers[i]
         if (!reduceMotion) {
-            star.y += star.speed
-            if (star.y > window.innerHeight) star.y = 0
+            ember.y -= ember.speed
+            ember.x += Math.sin(time / 1400 + ember.drift) * 0.3
+            if (ember.y < -10) embers[i] = makeEmber(false)
         }
-        ctx.globalAlpha = 0.35 + 0.65 * Math.abs(Math.sin(time / 900 + star.phase))
-        ctx.fillStyle = star.color
-        ctx.fillRect(Math.round(star.x), Math.round(star.y), star.size, star.size)
+        // fade out as embers rise, with a little flicker
+        const height = Math.max(0, ember.y / window.innerHeight)
+        ctx.globalAlpha = Math.min(1, height + 0.15) * (0.55 + 0.45 * Math.sin(time / 180 + ember.drift))
+        ctx.shadowBlur = 8
+        ctx.shadowColor = ember.color
+        ctx.fillStyle = ember.color
+        ctx.beginPath()
+        ctx.arc(ember.x, ember.y, ember.size, 0, Math.PI * 2)
+        ctx.fill()
     }
-    if (!reduceMotion) requestAnimationFrame(drawStars)
+    if (!reduceMotion) requestAnimationFrame(drawEmbers)
 }
 
-resizeStars()
-window.addEventListener('resize', resizeStars)
-requestAnimationFrame(drawStars)
+resizeEmbers()
+window.addEventListener('resize', resizeEmbers)
+requestAnimationFrame(drawEmbers)

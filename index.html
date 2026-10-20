@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul JS (Rae) | Front-end &amp; Game Developer</title>
+    <title>Rahul JS (Rae) | Full Stack &amp; Game Developer</title>
     <meta name="description"
-        content="Portfolio of Rahul JS (Rae), a front-end and game developer in Bangalore building web apps with React and Next.js and educational games with Phaser.">
+        content="Portfolio of Rahul JS (Rae), a full stack and game developer in Bangalore building web apps with React, Next.js, Firebase and Stripe, and 100+ educational games with Phaser.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -19,10 +19,10 @@
 </head>
 
 <body>
-    <canvas id="stars" aria-hidden="true"></canvas>
+    <canvas id="embers" aria-hidden="true"></canvas>
 
     <header class="site-header">
-        <a class="logo" href="#top">RAE<span class="blink">_</span></a>
+        <a class="logo" href="#top">Rae</a>
         <nav>
             <a href="#projects">Projects</a>
             <a href="#games">Games</a>
@@ -37,33 +37,34 @@
     <main id="top">
         <!-- HERO -->
         <section class="hero">
-            <p class="eyebrow">PLAYER 1 · BANGALORE, IN</p>
-            <h1>Hi, I'm <span class="gradient-text">Rae</span>.<br />I build web apps <br class="hide-sm" />&amp; games
-                people <span class="squiggle">play</span>.</h1>
+            <p class="eyebrow">✦ A developer of Bangalore ✦</p>
+            <h1>Hail, traveller.<br />I'm <span class="gold-text">Rae</span>, forger of <br class="hide-sm" />web apps
+                &amp; <span class="ember-text">games</span>.</h1>
             <p class="hero-sub">
-                Master's student and front-end &amp; game developer. I've shipped 10 educational web games at
-                Eklavya.Me with Phaser, React &amp; TypeScript, and full stack apps with Next.js, Stripe and Firebase.
+                Master's student and full stack &amp; game developer. I've built 100+ educational web games at
+                Eklavya.Me with Phaser, React &amp; TypeScript, and full stack apps with Next.js, Stripe and
+                Firebase.
             </p>
             <div class="hero-actions">
                 <button class="btn btn-play" id="play-random">
-                    <i class="fa-solid fa-play"></i> Play a game
+                    <i class="fa-solid fa-dice-d20"></i> Roll for a game
                 </button>
-                <a class="btn btn-ghost" href="#projects">See my work <i class="fa-solid fa-arrow-down"></i></a>
+                <a class="btn btn-ghost" href="#projects">Read the chronicle <i class="fa-solid fa-scroll"></i></a>
             </div>
             <ul class="stats">
-                <li><strong>10</strong><span>games shipped</span></li>
+                <li><strong>100+</strong><span>games built</span></li>
                 <li><strong>3</strong><span>full stack apps</span></li>
-                <li><strong>2</strong><span>dev roles</span></li>
+                <li><strong>2</strong><span>guilds joined</span></li>
             </ul>
         </section>
 
-        <!-- FEATURED: SMOLSTORE -->
+        <!-- CHAPTER I: SMOLSTORE -->
         <section id="projects" class="section">
             <div class="section-head">
-                <p class="eyebrow">LEVEL 01</p>
-                <h2>Featured project</h2>
+                <p class="eyebrow">Chapter I</p>
+                <h2>The featured quest</h2>
             </div>
-            <article class="feature-card">
+            <article class="feature-card framed">
                 <a class="feature-media" href="https://smolstore.vercel.app" target="_blank">
                     <img src="images/smolstore.webp" alt="Smolstore e-commerce store home page" loading="lazy" />
                 </a>
@@ -90,26 +91,14 @@
             </article>
         </section>
 
-        <!-- EKLAVYA GAMES -->
-        <section id="games" class="section">
-            <div class="section-head">
-                <p class="eyebrow">LEVEL 02</p>
-                <h2>Eklavya.Me games</h2>
-                <p class="section-sub">10 educational web games I built for young learners, from counting penguins
-                    to prime-number munching. Built with Phaser, React, TypeScript and Vite, tested with Vitest and
-                    shipped through GitHub Actions. <strong>Click any game to play it right here.</strong></p>
-            </div>
-            <div class="games-grid" id="games-grid"></div>
-        </section>
-
-        <!-- MORE PROJECTS -->
+        <!-- CHAPTER II: MORE PROJECTS -->
         <section class="section">
             <div class="section-head">
-                <p class="eyebrow">LEVEL 03</p>
-                <h2>More projects</h2>
+                <p class="eyebrow">Chapter II</p>
+                <h2>Side quests</h2>
             </div>
             <div class="cards">
-                <article class="card">
+                <article class="card framed">
                     <a class="card-media" href="https://expenny-blond.vercel.app" target="_blank">
                         <img src="images/expenny.webp" alt="Expenny subscription tracker landing page"
                             loading="lazy" />
@@ -132,7 +121,7 @@
                         </div>
                     </div>
                 </article>
-                <article class="card">
+                <article class="card framed">
                     <a class="card-media" href="https://brogram-taupe.vercel.app" target="_blank">
                         <img src="images/brogram.webp" alt="Brogram workout planner" loading="lazy" />
                     </a>
@@ -157,24 +146,37 @@
             </div>
         </section>
 
+        <!-- CHAPTER III: EKLAVYA GAMES -->
+        <section id="games" class="section">
+            <div class="section-head">
+                <p class="eyebrow">Chapter III</p>
+                <h2>The Eklavya.Me games</h2>
+                <p class="section-sub">I've built 100+ educational web games for young learners at Eklavya.Me, from
+                    counting penguins to prime-number munching, with Phaser, React, TypeScript and Vite, tested with
+                    Vitest and shipped through GitHub Actions. Here are 10 of them. <strong>Choose one to play it
+                        right here.</strong></p>
+            </div>
+            <div class="games-grid" id="games-grid"></div>
+        </section>
+
         <!-- EXPERIENCE -->
         <section id="experience" class="section">
             <div class="section-head">
-                <p class="eyebrow">LEVEL 04</p>
-                <h2>Experience</h2>
+                <p class="eyebrow">Chapter IV</p>
+                <h2>Campaign log</h2>
             </div>
             <ol class="timeline">
                 <li>
                     <span class="when">Aug 2026 – Present</span>
-                    <h3>Frontend Developer Intern <span>@ Thundertribes</span></h3>
+                    <h3>Frontend Developer Intern <span>of Thundertribes</span></h3>
                     <p>Building and maintaining responsive front-end interfaces for web applications in a remote
                         team.</p>
                 </li>
                 <li>
                     <span class="when">Dec 2024 – Present</span>
-                    <h3>Front-end Web &amp; Game Developer <span>@ Eklavya.Me</span></h3>
-                    <p>Built and shipped 10 educational web games with Phaser, React and TypeScript, plugged into a
-                        shared game shell. Led a team of game development interns.</p>
+                    <h3>Front-end Web &amp; Game Developer <span>of Eklavya.Me</span></h3>
+                    <p>Built 100+ educational web games with Phaser, React and TypeScript, plugged into a shared
+                        game shell. Led a party of game development interns.</p>
                 </li>
             </ol>
         </section>
@@ -182,12 +184,12 @@
         <!-- SKILLS -->
         <section class="section">
             <div class="section-head">
-                <p class="eyebrow">INVENTORY</p>
-                <h2>Skills</h2>
+                <p class="eyebrow">Chapter V</p>
+                <h2>Spellbook</h2>
             </div>
             <div class="skills">
-                <div class="skill-group">
-                    <h3><i class="fa-solid fa-code"></i> Front-end</h3>
+                <div class="skill-group framed">
+                    <h3><i class="fa-solid fa-wand-sparkles"></i> Front-end arts</h3>
                     <ul class="tags">
                         <li>JavaScript</li>
                         <li>TypeScript</li>
@@ -198,8 +200,8 @@
                         <li>HTML &amp; CSS</li>
                     </ul>
                 </div>
-                <div class="skill-group">
-                    <h3><i class="fa-solid fa-gamepad"></i> Games</h3>
+                <div class="skill-group framed">
+                    <h3><i class="fa-solid fa-dragon"></i> Game craft</h3>
                     <ul class="tags">
                         <li>Phaser</li>
                         <li>HTML5 Canvas</li>
@@ -207,8 +209,8 @@
                         <li>Vitest</li>
                     </ul>
                 </div>
-                <div class="skill-group">
-                    <h3><i class="fa-solid fa-server"></i> Back-end &amp; tools</h3>
+                <div class="skill-group framed">
+                    <h3><i class="fa-solid fa-hammer"></i> Back-end forge</h3>
                     <ul class="tags">
                         <li>Firebase</li>
                         <li>Firestore</li>
@@ -223,12 +225,12 @@
         </section>
 
         <!-- CONTACT -->
-        <section class="contact">
-            <p class="eyebrow">CONTINUE?</p>
-            <h2>Let's build something fun.</h2>
-            <p>I'm looking for front-end and game development roles. My inbox is always open.</p>
+        <section class="contact framed">
+            <p class="eyebrow">✦ Join my party ✦</p>
+            <h2>Seeking a full stack role.</h2>
+            <p>I'm looking for full stack developer roles. Send a raven, or an email, which is faster.</p>
             <div class="hero-actions">
-                <a class="btn btn-play" href="mailto:rahuljsuneel@gmail.com"><i class="fa-solid fa-envelope"></i>
+                <a class="btn btn-play" href="mailto:rahuljsuneel@gmail.com"><i class="fa-solid fa-feather"></i>
                     Email me</a>
                 <a class="btn btn-ghost" target="_blank"
                     href="https://www.linkedin.com/in/rahul-joy-suneel-1b90ba300/"><i
@@ -240,18 +242,18 @@
     </main>
 
     <footer class="site-footer">
-        <p>© 2026 Rahul JS (Rae) · Built with HTML, CSS &amp; JavaScript</p>
+        <p>© 2026 Rahul JS (Rae) · Forged with HTML, CSS &amp; JavaScript</p>
     </footer>
 
     <!-- GAME MODAL -->
     <dialog id="game-dialog" class="game-dialog" aria-labelledby="game-title">
         <div class="cabinet">
             <div class="cabinet-bar">
-                <span class="dots"><i></i><i></i><i></i></span>
+                <i class="fa-solid fa-dice-d20 bar-icon"></i>
                 <h2 id="game-title">Loading...</h2>
                 <div class="cabinet-actions">
-                    <button id="game-shuffle" title="Play another random game"><i class="fa-solid fa-shuffle"></i>
-                        <span>Another</span></button>
+                    <button id="game-shuffle" title="Roll for another game"><i class="fa-solid fa-dice"></i>
+                        <span>Reroll</span></button>
                     <a id="game-newtab" target="_blank" title="Open in a new tab"><i
                             class="fa-solid fa-up-right-from-square"></i></a>
                     <button id="game-close" title="Close (Esc)" aria-label="Close game"><i
@@ -260,8 +262,8 @@
             </div>
             <div class="screen">
                 <div class="loader" aria-hidden="true">
-                    <span class="loader-bar"><i></i></span>
-                    <p>LOADING<span class="blink">_</span></p>
+                    <i class="fa-solid fa-dice-d20 loader-die"></i>
+                    <p>Rolling the dice...</p>
                 </div>
                 <iframe id="game-frame" title="Eklavya game" allow="autoplay; fullscreen"></iframe>
             </div>
