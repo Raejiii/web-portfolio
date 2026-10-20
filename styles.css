@@ -341,13 +341,13 @@ img {
     color: var(--ink);
 }
 
-.dropcap::first-letter {
+.dropcap-word {
     float: left;
-    margin: 0.06em 0.12em 0 0;
+    margin: 0.08em 0.18em 0 0;
     font-family: var(--heading);
     font-weight: 700;
-    font-size: 4.4em;
-    line-height: 0.78;
+    font-size: 3.6em;
+    line-height: 0.8;
     color: var(--red-book);
     text-shadow: 2px 2px 0 rgba(201, 137, 43, 0.45);
 }
