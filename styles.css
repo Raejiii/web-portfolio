@@ -1091,6 +1091,11 @@ img {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* text spans the full width on phones, so darken the whole banner evenly */
+    .hero::before {
+        background: linear-gradient(180deg, rgba(13, 15, 18, 0.85), rgba(13, 15, 18, 0.93));
+    }
+
     .games-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.8rem;
