@@ -537,6 +537,10 @@ img {
     margin-top: 0.6rem;
 }
 
+.feature + .two-col {
+    margin-top: 1.75rem;
+}
+
 .two-col {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
