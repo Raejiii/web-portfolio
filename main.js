@@ -6,6 +6,12 @@ const GAMES = [
     { slug: 'number-climb', name: 'Number Climb', topic: 'Comparing numbers' },
 ]
 
+// the hero's "Play a game" button always opens this one
+const PUZZLE_PHANTOM = {
+    name: 'The Puzzle Phantom of Willowbrook',
+    url: 'https://puzzle-phantom-preview.vercel.app/',
+}
+
 const gameUrl = (game) => game.url || `${GAME_BASE}${game.slug}-phaser/index.html`
 
 // render the games grid
@@ -65,7 +71,7 @@ dialog.addEventListener('click', (event) => {
     if (event.target === dialog) closeGame()
 })
 
-document.getElementById('play-random').addEventListener('click', () => openGame(randomGame()))
+document.getElementById('play-random').addEventListener('click', () => openGame(PUZZLE_PHANTOM))
 document.getElementById('game-shuffle').addEventListener('click', () => openGame(randomGame()))
 document.getElementById('game-close').addEventListener('click', closeGame)
 
