@@ -4,12 +4,6 @@ const GAMES = [
     { slug: 'penguin-count', name: 'Penguin Count', topic: 'Counting' },
     { slug: 'sky-balloon-quest', name: 'Sky Balloon Quest', topic: 'Addition' },
     { slug: 'number-climb', name: 'Number Climb', topic: 'Comparing numbers' },
-    {
-        slug: 'puzzle-phantom',
-        name: 'The Puzzle Phantom of Willowbrook',
-        topic: 'Detective story',
-        url: 'https://puzzle-phantom-preview.vercel.app/',
-    },
 ]
 
 const gameUrl = (game) => game.url || `${GAME_BASE}${game.slug}-phaser/index.html`

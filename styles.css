@@ -537,7 +537,8 @@ img {
     margin-top: 0.6rem;
 }
 
-.feature + .two-col {
+.feature + .two-col,
+.two-col + .feature {
     margin-top: 1.75rem;
 }
 
@@ -577,7 +578,7 @@ img {
 /* ---------- games grid ---------- */
 .games-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.25rem;
 }
 
