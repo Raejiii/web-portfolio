@@ -478,6 +478,11 @@ img {
     transition: transform 0.5s;
 }
 
+/* a <picture> wrapper shouldn't break the img's 100% height */
+.feature-media picture {
+    display: contents;
+}
+
 .feature-media:hover img,
 .card-media:hover img {
     transform: scale(1.04);
